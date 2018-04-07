@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import ca.timevoy.destinationcheers.Deals;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -30,10 +29,15 @@ public class ItemDetailFragment extends Fragment {
      */
     private Deals.DealItem mItem;
 
+    TextView establishmentTitle;
     TextView establishmentLabel;
+    TextView locationTitle;
     TextView locationLabel;
+    TextView availabilityTitle;
     TextView availabilityLabel;
+    TextView detailsTitle;
     TextView detailsLabel;
+    TextView websiteTitle;
     TextView websiteLabel;
 
     /**
@@ -56,7 +60,6 @@ public class ItemDetailFragment extends Fragment {
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
                 appBarLayout.setTitle(mItem.getDay());
-                //appBarLayout.setSubTitle(mItem.getDealOfDay());
             }
         }
     }
@@ -68,20 +71,30 @@ public class ItemDetailFragment extends Fragment {
         // Show the deal content as text in a TextView.
         if (mItem != null) {
 
-            establishmentLabel = (TextView) rootView.findViewById(R.id.establishmentLabel);
-            establishmentLabel.setText(String.format("Place: %s", mItem.getEstablishment()));
+            establishmentTitle = rootView.findViewById(R.id.establishmentTitle);
+            establishmentTitle.setText("Place:");
+            establishmentLabel = rootView.findViewById(R.id.establishmentLabel);
+            establishmentLabel.setText(String.format("%s", mItem.getEstablishment()));
 
-            locationLabel = (TextView) rootView.findViewById(R.id.locationLabel);
-            locationLabel.setText(String.format("Location: %s", mItem.getLocation()));
+            locationTitle = rootView.findViewById(R.id.locationTitle);
+            locationTitle.setText("Location:");
+            locationLabel = rootView.findViewById(R.id.locationLabel);
+            locationLabel.setText(String.format("%s", mItem.getLocation()));
 
-            availabilityLabel = (TextView) rootView.findViewById(R.id.availabilityLabel);
-            availabilityLabel.setText(String.format("Availability: %s", mItem.getAvailability()));
+            availabilityTitle = rootView.findViewById(R.id.availabilityTitle);
+            availabilityTitle.setText("Availability:");
+            availabilityLabel = rootView.findViewById(R.id.availabilityLabel);
+            availabilityLabel.setText(String.format("%s", mItem.getAvailability()));
 
-            detailsLabel = (TextView) rootView.findViewById(R.id.detailsLabel);
-            detailsLabel.setText(String.format("Details: %s", mItem.getDetails()));
+            detailsTitle = rootView.findViewById(R.id.detailsTitle);
+            detailsTitle.setText("Deal Details:");
+            detailsLabel = rootView.findViewById(R.id.detailsLabel);
+            detailsLabel.setText(String.format("%s", mItem.getDetails()));
 
-            websiteLabel = (TextView) rootView.findViewById(R.id.websiteLabel);
-            websiteLabel.setText(String.format("Website: %s", mItem.getWebsite()));
+            websiteTitle = rootView.findViewById(R.id.websiteTitle);
+            websiteTitle.setText("Website:");
+            websiteLabel = rootView.findViewById(R.id.websiteLabel);
+            websiteLabel.setText(String.format("%s", mItem.getWebsite()));
         }
 
         return rootView;

@@ -7,8 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,11 +38,11 @@ public class ItemListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        // Initialize and create deal days of the week if not done already.
+        // Initialize and create days of the week and their deals if not done so already.
         dealsOfTheWeek = new Deals();
         if (!dealsOfTheWeekCreated) {
             dealsOfTheWeek.createDealItems();
@@ -124,15 +122,13 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-            //final TextView mIdView;
             final TextView mContentView;
             final TextView mSubContentView;
 
             ViewHolder(View view) {
                 super(view);
-                //mIdView = (TextView) view.findViewById(R.id.id_text);
-                mContentView = (TextView) view.findViewById(R.id.content);
-                mSubContentView = (TextView) view.findViewById(R.id.subContent);
+                mContentView = view.findViewById(R.id.content);
+                mSubContentView = view.findViewById(R.id.subContent);
             }
         }
     }
