@@ -15,7 +15,6 @@ public class Deals {
      * A deal item representing a happy hour deal.
      */
     public class DealItem {
-
         public String day;
         public String dealOfDay;
         public String establishment;
@@ -29,7 +28,6 @@ public class Deals {
          */
         public DealItem(String day, String dealOfDay, String establishment,
                         String location, String availability, String details, String website) {
-
             this.day = day;
             this.dealOfDay = dealOfDay;
             this.establishment = establishment;
@@ -40,38 +38,25 @@ public class Deals {
         }
 
         // GETTER for day
-        public String getDay() {
-            return day;
-        }
+        public String getDay() { return day; }
 
         // GETTER for deal of the day
-        public String getDealOfDay() {
-            return dealOfDay;
-        }
+        public String getDealOfDay() { return dealOfDay; }
 
         // GETTER for establishment
-        public String getEstablishment() {
-            return establishment;
-        }
+        public String getEstablishment() { return establishment; } 
 
         // GETTER for location
-        public String getLocation() {
-            return location;
-        }
+        public String getLocation() { return location; }
 
         // GETTER for availability
-        public String getAvailability() {
-            return availability;
-        }
+        public String getAvailability() { return availability; }
 
         // GETTER for details
-        public String getDetails() {
-            return details;
-        }
+        public String getDetails() { return details; }
 
         // GETTER for website
         public String getWebsite() { return website; }
-
     }
 
     // An array of sample deal items.
