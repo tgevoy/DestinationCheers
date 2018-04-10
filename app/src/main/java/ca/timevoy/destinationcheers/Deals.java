@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * This class is the blueprint for Deal items.
+ * This class is the blueprint for creating Deal items.
  */
 
 class Deals {
